@@ -4,7 +4,7 @@ The shortest ever code (**16 lines of Python codes**) to remove any adversarial 
 
 It does not even use deep learning.
 
-And I personally think that anisotropic filtering method like this repo is more effective than training noise-removal neural networks because convolution operations are essentially non-anisotropic. 
+And I personally think anisotropic filtering methods like this repo are more effective than training noise-removal neural networks because convolution operations are essentially non-anisotropic. 
 
 In frequency domain, anisotropic methods are usually more “killing”.
 
