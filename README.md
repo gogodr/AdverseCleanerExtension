@@ -26,6 +26,6 @@ Input (with adversarial noise):
 
 ![p](input.png)
 
-Output (removing adversarial noise, 2.13 second on my laptop CPU):
+Output (removing adversarial noise, 2.13 seconds on my laptop CPU):
 
 ![p](output.png)
