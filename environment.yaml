@@ -1,0 +1,7 @@
+name: advc
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - pip:
+      - opencv-contrib-python

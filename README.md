@@ -7,3 +7,13 @@ And I personally think that anisotropic filtering method like this repo is more 
 In frequency domain, anisotropic methods are usually more “killing”.
 
 # Run
+
+    conda env create -f environment.yaml
+    conda activate advc
+    python clean.py
+
+Feel free to take a look at the code to change input images.
+
+# Result
+
+
