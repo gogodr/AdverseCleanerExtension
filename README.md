@@ -6,6 +6,8 @@ And I personally think that anisotropic filtering method like this repo is more 
 
 In frequency domain, anisotropic methods are usually more “killing”.
 
+No GPU is needed. Each 1024px image only need less than 3 seconds my laptop CPU.
+
 # Run
 
     conda env create -f environment.yaml
@@ -16,4 +18,12 @@ Feel free to take a look at the code to change input images.
 
 # Result
 
+The test image is from [here](https://twitter.com/aifurryart/status/1636208457715187714).
 
+Input (with adversarial noise):
+
+![p](input.png)
+
+Output (removing adversarial noise, 2.13 second on my laptop CPU):
+
+![p](output.png)
