@@ -8,7 +8,7 @@ And I personally think anisotropic filtering methods like this repo are more eff
 
 In frequency domain, anisotropic methods are usually more “killing”.
 
-No GPU is needed. Each 1024px image only need less than 3 seconds my on laptop CPU.
+No GPU is needed. Each 1024px image only need less than 3 seconds on my laptop CPU.
 
 # Run
 
