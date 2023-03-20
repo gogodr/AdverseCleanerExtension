@@ -23,7 +23,7 @@ class Script(scripts.Script):
         * Bilateral Filter
         ''')
         bilateral_steps = gr.Slider(minimum=1, maximum=128, step=1,
-                                    value=64, label="Steps")
+                                    value=64, label="Bilateral Steps")
         diameter = gr.Slider(minimum=1, maximum=30, step=1,
                              value=5, label="Diameter")
         sigma_color = gr.Slider(minimum=1, maximum=30,
@@ -34,7 +34,7 @@ class Script(scripts.Script):
         * Guided Filter
         ''')
         guided_steps = gr.Slider(minimum=1, maximum=64, step=1,
-                                 value=4, label="Steps")
+                                 value=4, label="Guided Steps")
         radius = gr.Slider(minimum=1, maximum=30, step=1,
                            value=4, label="Radius")
         eps = gr.Slider(minimum=1, maximum=30, step=1,
