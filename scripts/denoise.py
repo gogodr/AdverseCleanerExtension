@@ -22,6 +22,8 @@ class Script(scripts.Script):
         info = gr.Markdown('''
         * Bilateral Filter
         ''')
+        bilateral_steps = gr.Slider(minimum=1, maximum=128, step=1,
+                                    value=64, label="Steps")
         diameter = gr.Slider(minimum=1, maximum=30, step=1,
                              value=5, label="Diameter")
         sigma_color = gr.Slider(minimum=1, maximum=30,
@@ -31,13 +33,15 @@ class Script(scripts.Script):
         info2 = gr.Markdown('''
         * Guided Filter
         ''')
+        guided_steps = gr.Slider(minimum=1, maximum=64, step=1,
+                                 value=4, label="Steps")
         radius = gr.Slider(minimum=1, maximum=30, step=1,
                            value=4, label="Radius")
         eps = gr.Slider(minimum=1, maximum=30, step=1,
                         value=16, label="Accuracy")
-        return [info, diameter, sigma_color, sigma_space, info2, radius, eps]
+        return [info, bilateral_steps, diameter, sigma_color, sigma_space, info2, guided_steps, radius, eps]
 
-    def run(self, p, _, diameter, sigma_color, sigma_space, __, radius, eps):
+    def run(self, p, _, bilateral_steps, diameter, sigma_color, sigma_space, __, guided_steps, radius, eps):
         from PIL import Image
         has_grid = False
 
@@ -53,10 +57,10 @@ class Script(scripts.Script):
             img = cv2.cvtColor(
                 np.array(im), cv2.COLOR_RGB2BGR).astype(np.float32)
             y = img.copy()
-            for _ in range(64):
+            for _ in range(bilateral_steps):
                 y = cv2.bilateralFilter(y, diameter, sigma_color, sigma_space)
 
-            for _ in range(4):
+            for _ in range(guided_steps):
                 y = guidedFilter(img, y, radius, eps)
 
             out_image = Image.fromarray(cv2.cvtColor(
