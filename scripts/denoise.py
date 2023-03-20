@@ -20,7 +20,7 @@ class Script(scripts.Script):
 
     def ui(self, is_img2img):
         info = gr.Markdown('''
-        ## Bilateral Filter
+        ### Bilateral Filter
         ''')
         bilateral_steps = gr.Slider(minimum=1, maximum=128, step=1,
                                     value=64, label="Bilateral Steps")
@@ -31,7 +31,7 @@ class Script(scripts.Script):
         sigma_space = gr.Slider(minimum=1, maximum=30,
                                 step=1, value=8, label="SigmaSpace")
         info2 = gr.Markdown('''
-        ## Guided Filter
+        ### Guided Filter
         ''')
         guided_steps = gr.Slider(minimum=1, maximum=64, step=1,
                                  value=4, label="Guided Steps")
