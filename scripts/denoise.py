@@ -51,9 +51,9 @@ class Script(scripts.Script):
         if (opts.return_grid or opts.grid_save) and not p.do_not_save_grid and not unwanted_grid_because_of_img_count:
             has_grid = True
 
-        outpath = p.outpath_grids if has_grid and i == 0 else p.outpath_samples
 
-        def process(im):
+        def process(im,i):
+            outpath = p.outpath_grids if has_grid and i == 0 else p.outpath_samples
             img = cv2.cvtColor(
                 np.array(im), cv2.COLOR_RGB2BGR).astype(np.float32)
             y = img.copy()
@@ -70,5 +70,5 @@ class Script(scripts.Script):
             return out_image
 
         for i in range(len(proc.images)):
-            proc.images.append(process(proc.images[i]))
+            proc.images.append(process(proc.images[i], i))
         return proc
